@@ -36,7 +36,7 @@ function Login() {
         // Redirect user after a short delay
         // const from = location.state?.from?.pathname || "/KYCRequest";
         setTimeout(() => {
-          navigate(from, { replace: true });
+          navigate("/KYCRequest", { replace: true }); 
         }, 1000);
       }
     } catch (error) {
