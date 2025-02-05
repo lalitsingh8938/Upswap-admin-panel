@@ -1,0 +1,28 @@
+# version: '3.8'
+
+# services:
+#   vite-app:
+#     build: .
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - NODE_ENV=production
+#     command: ["serve", "-s", "build", "-l", "5173", "--single"]
+# 
+
+version: '3.8'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    # environment:
+    #   - CHOKIDAR_USEPOLLING=true
+    # stdin_open: true
+    # tty: true
+    # command: npm run dev

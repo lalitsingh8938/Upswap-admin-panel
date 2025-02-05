@@ -146,7 +146,7 @@ function Login() {
         // Redirect user after a short delay
         setTimeout(() => {
           navigate("/KYCRequest");
-        }, 3000);
+        }, 1000);
       }
     } catch (error) {
       // Error Toast
