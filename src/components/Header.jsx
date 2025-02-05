@@ -2,7 +2,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Header = () => {
   return (
-    <div className="bg-white shadow-md py-6 px-4">
+    <header className="bg-white shadow-md py-6 px-4">
       {/* Header Container */}
       <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
         {/* ✅ Search Bar */}
@@ -26,7 +26,7 @@ const Header = () => {
           />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
