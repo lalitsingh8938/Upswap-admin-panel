@@ -11,25 +11,25 @@ const LogoutButton = () => {
     try {
       const accessToken = localStorage.getItem("access_token");
       const refreshToken = localStorage.getItem("refresh_token");
-
+  
       if (!accessToken || !refreshToken) {
-        navigate("/login"); // Agar tokens nahi hain, to login page par redirect karen
+        navigate("/login"); // Redirect to login page if tokens are missing
         return;
       }
-
+  
       const response = await fetch("https://api.upswap.app/api/logout/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify({ refresh_token: refreshToken }),
+        body: JSON.stringify({ refresh_token: refreshToken }), // Use 'refresh' as the key
       });
-
+  
       if (response.ok) {
-        // Logout successful hone par localStorage ko clear karen
-        logout(); // AuthContext ka logout function call karen
-        navigate("/login"); // Logout ke baad login page par redirect karen
+        // On successful logout, clear localStorage
+        logout(); // Call the logout function from AuthContext
+        navigate("/login"); // Redirect to login page after logout
       } else {
         console.error("Logout failed.");
       }
@@ -37,6 +37,7 @@ const LogoutButton = () => {
       console.error("Error during logout:", error);
     }
   };
+  
 
   return (
     <div

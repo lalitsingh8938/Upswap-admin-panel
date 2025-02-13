@@ -217,12 +217,12 @@
 // export default BusinessDetails;
 
 import React from "react";
-
+import Charts from "./Charts";
 const BusinessDetails = () => {
   return (
-    <div className="container mx-auto p-6 bg-white min-h-screen border-t-2">
+    <div className="container mx-auto p-6 bg-white min-h-screen">
       {/* Personal & Business Details */}
-      <div className="bg-gray-100 p-6 rounded-lg shadow-md md:ml-72">
+      <div className="bg-gray-100 p-6 rounded-lg md:ml-72">
         <h2 className="text-xl font-semibold mb-4">
           Personal & Business Details
         </h2>
@@ -330,6 +330,7 @@ const BusinessDetails = () => {
           </div>
         </div>
       </div>
+      <Charts />
 
       {/* Services / Products provided by Vendor */}
       <div className="bg-gray-100 p-6 rounded-lg shadow-md mt-6 md:ml-72">
@@ -426,7 +427,7 @@ const BusinessDetails = () => {
 
       {/* Approval Status */}
       <div className="flex justify-start mt-6 md:ml-72">
-        <button className="bg-red-500 text-white px-4 py-2 rounded-lg">
+        <button className="bg-red-500 text-white px-8 font-semibold py-2 rounded-lg">
           Approved
         </button>
       </div>

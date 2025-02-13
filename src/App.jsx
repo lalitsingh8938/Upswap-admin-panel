@@ -71,7 +71,6 @@
 
 // export default App;
 
-
 import "./App.css";
 import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
@@ -85,7 +84,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import PdfViewer from "./components/PdfViewer";
 import BusinessDetails from "./components/BusinessDetails";
 import NewVendor from "./components/NewVendor";
-
+import Graph from "./components/Graph";
+import Charts from "./components/Charts";
 function App() {
   return (
     <AuthProvider>
@@ -119,6 +119,30 @@ function App() {
             }
           />
           <Route
+            path="/Charts"
+            element={
+              <PrivateRoute>
+                <>
+                  <Header />
+                  <Sidebar />
+                  <Charts />
+                </>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/Graph"
+            element={
+              <PrivateRoute>
+                <>
+                  <Header />
+                  {/* <Sidebar /> */}
+                  <Graph />
+                </>
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/NewVendor"
             element={
               <PrivateRoute>
@@ -130,7 +154,7 @@ function App() {
               </PrivateRoute>
             }
           />
-            <Route
+          <Route
             path="/BusinessDetails"
             element={
               <PrivateRoute>

@@ -100,7 +100,7 @@ export default function StoreList() {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-gray-100">
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <main className="flex-1 md:ml-72 px-6 py-6">
         <button

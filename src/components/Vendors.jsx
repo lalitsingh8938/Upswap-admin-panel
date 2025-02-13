@@ -51,7 +51,7 @@ const CardList = () => {
   }, [openMenus]);
 
   return (
-    <div className="grid grid-cols-1 justify-center items-center md:ml-72 md:grid-cols-3 gap-8 p-6">
+    <div className="grid grid-cols-1 bg-gray-100 justify-center items-center md:ml-72 md:grid-cols-3 gap-8 p-6">
       {data.map((item) => (
         <div
           key={item.id}
