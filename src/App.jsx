@@ -81,11 +81,12 @@ import Users from "./components/Users";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
-import PdfViewer from "./components/PdfViewer";
+// import PdfViewer from "./components/PdfViewer";
 import BusinessDetails from "./components/BusinessDetails";
 import NewVendor from "./components/NewVendor";
 import Graph from "./components/Graph";
 import Charts from "./components/Charts";
+import PdfPreview from "./components/PdfPreview"
 function App() {
   return (
     <AuthProvider>
@@ -114,6 +115,18 @@ function App() {
                   <Header />
                   <Sidebar />
                   <KYCRequest />
+                </>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/PdfPreview"
+            element={
+              <PrivateRoute>
+                <>
+                  <Header />
+                  <Sidebar />
+                  <PdfPreview />
                 </>
               </PrivateRoute>
             }
@@ -180,14 +193,14 @@ function App() {
             }
           />
 
-          <Route
+          {/* <Route
             path="/PdfViewer"
             element={
               <PrivateRoute>
                 <PdfViewer />
               </PrivateRoute>
             }
-          />
+          /> */}
           <Route
             path="/Vendors"
             element={
